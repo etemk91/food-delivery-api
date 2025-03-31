@@ -13,6 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -20,6 +21,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.1",
     "@types/morgan": "^1.9.9",
