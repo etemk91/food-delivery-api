@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import mongoose from 'mongoose'
 
 dotenv.config()
 
@@ -14,6 +15,17 @@ app.get('/', (req, res) => {
   res.send('Food Delivery API')
 })
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+const start = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI!)
+    console.log('Connected to MongoDB')
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`)
+    })
+  } catch (error) {
+    console.error(error)
+    process.exit(1)
+  }
+}
+
+start()
